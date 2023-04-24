@@ -8,3 +8,6 @@ $users = Get-AzureADUser -All $true | Select-Object UserPrincipalName
 foreach ($user in $users) {
     Set-MailboxJunkEmailConfiguration -Identity $user.UserPrincipalName -TrustedSendersAndDomains @{Add="pishing.tutari.net","noreply@pishing.tutari.net"}
 }
+
+
+Get-Mailbox -ResultSize Unlimited | Set-MailboxJunkEmailConfiguration -TrustedSendersAndDomains "pishing.tutari.net","noreply@pishing.tutari.net"
