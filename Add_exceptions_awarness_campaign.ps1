@@ -1,4 +1,7 @@
-﻿#Conexión a Azure Active Directory
+Install-Module ExchangeOnlineManagement
+Connect-ExchangeOnline
+
+#Conexión a Azure Active Directory
 Connect-AzureAD
 
 #Obtener todos los usuarios de la organización
