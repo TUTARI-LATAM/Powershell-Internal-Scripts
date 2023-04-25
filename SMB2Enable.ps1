@@ -1,6 +1,7 @@
 ﻿# Enable SMB2 protocol
 Set-SmbServerConfiguration -EnableSMB2Protocol $true
 # Disable SMB1 protocol
+Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 Set-SmbServerConfiguration -EnableSMB1Protocol $false
 # Regedit
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "SMB1" -Type DWORD -Value 0
