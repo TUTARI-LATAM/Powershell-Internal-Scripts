@@ -20,7 +20,7 @@ if ($smb1Enabled -eq "Disabled") {
 }
 else {
     # Deshabilitar SMB1
-    Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+    Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -norestart
     Set-SmbServerConfiguration -EnableSMB1Protocol $false
     Write-Host "SMB1 deshabilitado correctamente."
 }
